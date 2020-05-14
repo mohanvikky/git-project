@@ -72,7 +72,7 @@ ggplot(washington, aes(month)) + geom_histogram(bins = 6, color = I('black'), fi
  table(washington$month)
 #Popular weekdays in chicago, newyork and washington
 
-ggplot(chicago, aes(day)) + geom_bar(color = I('black'), fill=(or))+  
+ggplot(chicago, aes(day)) + geom_bar(color = I('white'), fill=(or))+  
   xlab("Weekdays") +  ylab("Count")+ ggtitle("Popular Weekdays in Chicago")
 
 ggplot(newyork, aes(day)) + geom_bar(color = I('black'), fill=(or))+  
