@@ -59,16 +59,16 @@ or = "#E69F00"
 ggplot(chicago, aes(month)) + geom_histogram(bins = 6, color = I('black'), fill=(or))+  
   scale_x_continuous(breaks = seq(1,6,1))+ scale_y_continuous(breaks = seq(0,30000, 5000))+
   xlab("month") +  ylab("Count")+ ggtitle("Popular Months in Chicago")
-
+table(chicago$month)
 ggplot(newyork, aes(month)) + geom_histogram(bins = 6, color = I('black'), fill=(or))+  
   scale_x_continuous(breaks = seq(1,6,1))+ scale_y_continuous(breaks = seq(0,30000, 5000))+
   xlab("month") +  ylab("Count")+ ggtitle("Popular Months in New York City")
-
+table(newyork$month)
 ggplot(washington, aes(month)) + geom_histogram(bins = 6, color = I('black'), fill=(or))+  
   scale_x_continuous(breaks = seq(1,6,1))+ scale_y_continuous(breaks = seq(0,30000, 5000))+
   xlab("month") +  ylab("Count")+ ggtitle("Popular Months in Washington")
- table(chicago$month)
- table(newyork$month)
+ 
+ 
  table(washington$month)
 #Popular weekdays in chicago, newyork and washington
 
