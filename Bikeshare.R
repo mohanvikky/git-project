@@ -59,16 +59,16 @@ or = "#E69F00"
 ggplot(chicago, aes(month)) + geom_histogram(bins = 6, color = I('black'), fill=(or))+  
   scale_x_continuous(breaks = seq(1,6,1))+ scale_y_continuous(breaks = seq(0,30000, 5000))+
   xlab("month") +  ylab("Count")+ ggtitle("Popular Months in Chicago")
-
+table(chicago$month)
 ggplot(newyork, aes(month)) + geom_histogram(bins = 6, color = I('black'), fill=(or))+  
   scale_x_continuous(breaks = seq(1,6,1))+ scale_y_continuous(breaks = seq(0,30000, 5000))+
   xlab("month") +  ylab("Count")+ ggtitle("Popular Months in New York City")
-
+table(newyork$month)
 ggplot(washington, aes(month)) + geom_histogram(bins = 6, color = I('black'), fill=(or))+  
   scale_x_continuous(breaks = seq(1,6,1))+ scale_y_continuous(breaks = seq(0,30000, 5000))+
   xlab("month") +  ylab("Count")+ ggtitle("Popular Months in Washington")
- table(chicago$month)
- table(newyork$month)
+ 
+ 
  table(washington$month)
 #Popular weekdays in chicago, newyork and washington
  table(chicago$day)
@@ -105,16 +105,16 @@ table(washington$hour)
 
 #Gender count in chicago and new york
 
-chicago %>% group_by(Gender) %>% filter(!is.na(Gender))%>%
-  summarise(total = length(Gender))%>%
-  ggplot(aes(Gender, total)) + geom_bar(stat = 'identity', color = I('black'), fill=(or))+
-  xlab("Gender") +  ylab("Count ")+ ggtitle("Counts of each gender in chicago")
-
-table(chicago$Gender)
-
-
 newyork %>% group_by(Gender) %>% filter(!is.na(Gender))%>%
   summarise(total = length(Gender))%>%
   ggplot(aes(Gender, total)) + geom_bar(stat = 'identity', color = I('black'), fill=(or))+
   xlab("Gender") +  ylab("Count ")+ ggtitle("Counts of each gender in new york")
 table(newyork$Gender)
+chicago %>% group_by(Gender) %>% filter(!is.na(Gender))%>%
+  summarise(total = length(Gender))%>%
+  ggplot(aes(Gender, total)) + geom_bar(stat = 'identity', color = I('black'), fill=(or))+
+  xlab("Gender") +  ylab("Count ")+ ggtitle("Counts of each gender in chicago")
+
+table(chicago$Gender) #indicates chicago gender count
+
+
