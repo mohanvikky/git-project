@@ -115,6 +115,6 @@ chicago %>% group_by(Gender) %>% filter(!is.na(Gender))%>%
   ggplot(aes(Gender, total)) + geom_bar(stat = 'identity', color = I('black'), fill=(or))+
   xlab("Gender") +  ylab("Count ")+ ggtitle("Counts of each gender in chicago")
 
-table(chicago$Gender)
+table(chicago$Gender) #indicates chicago gender count
 
 
