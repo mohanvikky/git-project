@@ -105,6 +105,11 @@ table(washington$hour)
 
 #Gender count in chicago and new york
 
+newyork %>% group_by(Gender) %>% filter(!is.na(Gender))%>%
+  summarise(total = length(Gender))%>%
+  ggplot(aes(Gender, total)) + geom_bar(stat = 'identity', color = I('black'), fill=(or))+
+  xlab("Gender") +  ylab("Count ")+ ggtitle("Counts of each gender in new york")
+table(newyork$Gender)
 chicago %>% group_by(Gender) %>% filter(!is.na(Gender))%>%
   summarise(total = length(Gender))%>%
   ggplot(aes(Gender, total)) + geom_bar(stat = 'identity', color = I('black'), fill=(or))+
@@ -113,8 +118,3 @@ chicago %>% group_by(Gender) %>% filter(!is.na(Gender))%>%
 table(chicago$Gender)
 
 
-newyork %>% group_by(Gender) %>% filter(!is.na(Gender))%>%
-  summarise(total = length(Gender))%>%
-  ggplot(aes(Gender, total)) + geom_bar(stat = 'identity', color = I('black'), fill=(or))+
-  xlab("Gender") +  ylab("Count ")+ ggtitle("Counts of each gender in new york")
-table(newyork$Gender)
